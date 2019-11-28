@@ -1,0 +1,31 @@
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background: #184D87;
+
+}
+.circle{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #597EAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_iconUser{
+    font-size: 160px !important;
+    color: white;
+}
+.aqui{
+    width: 300px !important;
+}
+
+.col-12_flex{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+
+}

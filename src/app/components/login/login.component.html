@@ -1,0 +1,61 @@
+<div class="contenedor">
+
+
+  <div class="container">
+    <div class="col-12">
+      <div class="row text-center ">
+        <div class="col-12  mt-3 col-12_flex">
+          <div class="circle">
+            <i class="far fa-user login_iconUser"></i>
+          </div>
+
+          <form class="form-signin" [formGroup]="formulario">
+            <div class="col-12 aqui">
+              <!-- <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> -->
+
+              <input formControlName="user" type="email" class="form-control" placeholder="Email address" required=""
+                autofocus=""
+                [ngClass]="{'is-invalid': formulario.get('user').errors && formulario.get('user').touched, 'is-valid':!formulario.get('user').errors&& formulario.get('user').touched}">
+
+              <div class="invalid-feedback d-block"
+                *ngIf="formulario.controls.user.errors?.required && formulario.controls.user.touched">Email es
+                necesario</div>
+              <div class="invalid-feedback d-block" *ngIf="formulario.controls.user.errors?.pattern">Es necesario que
+                el correo sea válido</div>
+
+
+              <input formControlName="password" type="password" class="form-control mt-3" placeholder="Password"
+                required=""
+                [ngClass]="{'is-invalid': formulario.get('password').errors && formulario.get('password').touched || formulario.get('password').hasError('minlength'), 'is-valid': !formulario.get('password').errors&& formulario.get('password').touched }">
+
+              <div class="invalid-feedback d-block"
+                *ngIf="formulario.controls.password.errors?.required && formulario.controls.password.touched">Contraseña
+                es necesaria </div>
+              <div class="invalid-feedback d-block" *ngIf="formulario.controls.password.errors?.minlength">Es necesario
+                que la contraseña contenga mínimo 8 dígitos dígitos</div>
+              <div class="invalid-feedback d-block" *ngIf="formulario.controls.password.errors?.pattern">La contraseña
+                debe contener mayuculas. minúsculas, números y caracteres especiales</div>
+
+
+
+              <input formControlName="confirmpassword" type="password" class="form-control mt-3"
+                placeholder="Confirm Password" required=""
+                [ngClass]="{'is-invalid': formulario.get('confirmpassword').errors && formulario.get('confirmpassword').touched, 'is-valid':!formulario.get('confirmpassword').errors&& formulario.get('confirmpassword').touched}">
+              <div class="invalid-feedback d-block" *ngIf="formulario.controls.confirmpassword.errors?.diferente"> La
+                contraseña no coincide</div>
+
+
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="verestadoform()">Sign in</button>
+              <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

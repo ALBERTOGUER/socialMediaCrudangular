@@ -1,0 +1,115 @@
+<div class="contenedor">
+  <nav class="navbar navbar-light bg-light">
+    <div class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
+  </nav>
+  <div id="container_sections">
+
+    <section class="sect1">
+      <div style="position: fixed !important;">
+        <div id="div_user">
+          <div id="circle"></div>
+          <span>Alberto Jorge</span>
+        </div>
+
+        <div class="div_options">
+          <span><i class="fas fa-newspaper"></i>Noticias</span>
+        </div>
+        <div class="div_options">
+          <span><i class="fas fa-comments"></i>Noticias</span>
+        </div>
+        <div class="div_options">
+          <span><i class="fas fa-tv"></i>Noticias</span>
+        </div>
+        <div class="div_options">
+          <span><i class="fas fa-store"></i>Noticias</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="sect2">
+        <div class="card mb-2" *ngFor=" let item of datanews; let i = index">
+            <img [src]="item.urlToImage" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.description}}</h5>
+              
+              <p *ngIf="mostrarMas && i == id" class="card-text">{{item.content}}</p>
+  
+              <span><a (click)=" changenew(i)">Ver más..</a></span>
+  
+            </div>
+          </div>
+  
+    </section>
+
+
+    <section class="sect3">
+
+      <!-- <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block"></button> -->
+
+      <div id="friends_container">
+
+        <!-- <div style="display: flex;"> -->
+          <button type="button" name="" id="" class="btn btn-primary btn-sm " (click)="open(content,'new',null)" >New <i class="fas fa-plus" style="color: white;"></i></button>
+          <div class="form-group">
+            <label for=""></label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [formControl]="controlSearch">
+
+          </div>
+        <!-- </div> -->
+        <div class="card mb-2" *ngFor=" let  item of array">
+          <img [src]="item.avatar" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.first_name}} {{item.last_name}}</h5>
+            <p class="card-text">{{item.email}}</p>
+
+            <button type="button" name="" id="" class="btn btn-outline-success btn-sm "  (click)="open(content,'othernew', item.id)"   >Update</button>
+            <button type="button" name="" id="" class="btn btn-outline-danger btn-sm  ml-3"  (click)="dedelete_this()" >Delete</button>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+  </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" [formGroup]="formulario2">
+      
+       
+
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text"
+            class="form-control" name="" id="" aria-describedby="helpId" placeholder="" #name formControlName="name">
+          
+        </div>
+
+        <div class="form-group">
+          <label for="">Job</label>
+          <input type="text"
+            class="form-control" name="" id="" aria-describedby="helpId" placeholder="" #job formControlName="job">
+          
+        </div>
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')"  >Save</button>
+    </div>
+  </ng-template>
+
+  <pre>{{closeResult}}</pre>

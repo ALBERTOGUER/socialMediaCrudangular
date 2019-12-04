@@ -1,0 +1,100 @@
+.contenedor{
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    padding: 8px 60.5px !important;
+    position: fixed;
+    z-index: 4;
+    width: 100vw;
+}
+
+/* .lado{
+    
+} */
+
+.sect1{
+    width: 250px;
+    /* height: auto; */
+    /* position: fixed; */
+    background: #E9EBEE;
+    padding-left: 65px;
+    padding-top: 60px;float: left;
+    
+}
+
+.sect2{
+    width: 500px;
+    height: 200vh;
+    /* margin-left: 250px; */
+    float: left;
+    /* background: black; */
+    
+
+}
+
+.sect3{
+    width: 500px;
+    /* margin-left: 750px; */
+    float: left;
+    height: 100vh;
+    /* background: #E9EBEE; */
+    /* background: #15AABF; */
+    padding-top: 70px;
+    /* position: fixed; */
+    display: flex;
+    justify-content: end;
+}
+ 
+
+
+#container_sections{
+    /* display: flex; */
+    background: #E9EBEE;
+    width: 100%;
+    /* background: aqua; */
+}
+.fas{
+    color: #15AABF;
+    margin-right: 8px;
+}
+#circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    margin-right: 8px;
+}
+
+#div_user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.div_options{
+    width: 160px;
+    margin-bottom: 7px;
+    padding-left: 5px;
+}
+
+.div_options:hover{
+    background: #F5F6F7;
+    
+}
+
+.card{
+    padding: 10px;
+}
+
+#friends_container{
+    height: 100vh;
+     overflow: scroll; 
+     position: fixed;
+      width: 300px;
+      padding: 10px;
+}
